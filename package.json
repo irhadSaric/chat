@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "hahu",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "hahu"
+  ],
+  "author": "ja",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "html": "^1.0.0",
+    "mongodb": "^3.0.10",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "ws": "3.3.2"
+  }
+}
