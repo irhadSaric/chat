@@ -1,0 +1,10 @@
+<form method="post" action="/register">
+  <input type="text" name="usernameReg" placeholder="Username" class='username' value="<%= data.username %>"></input>
+  <input type="email" name="email" placeholder="E-mail" value="<%= data.email %>"></input>
+  <input type="password" name="password" placeholder="Password"></input>
+  <input type="password" name="password2" placeholder="Potvrda passworda"></input>
+  <input type="submit" name="submit" value="Registruj me" id="submit"></input>
+  <p id="poruka"><%= data.poruka %></p>
+</form>
+
+<script src="/js/provjera.js"></script>

@@ -10,7 +10,9 @@ mongo.connect('mongodb://127.0.0.1/chat', function(err, baza){
   var numUsers = 0;
 
   client.on('connection', function(socket){
-    socket.on('privatna',function(data){
+/*
+    socket.on('privatna',function(data)
+    {
       var niz = data.data.split('/');
       var user1 = niz[niz.length-1];
       var user2 = niz[niz.length-2];
@@ -36,7 +38,7 @@ mongo.connect('mongodb://127.0.0.1/chat', function(err, baza){
            ]
       };
 
-      console.log(query);
+      //console.log(query);
       col.find(query).limit(100).sort({_id: 1}).toArray(function(err, res){
         if(err) throw err;
         socket.emit('output', res);
@@ -63,7 +65,7 @@ mongo.connect('mongodb://127.0.0.1/chat', function(err, baza){
         }
       });
     });
-
+*/
     //----------------GRUPNE-----------------//
 
     socket.on('grupna', function(){
@@ -95,7 +97,7 @@ mongo.connect('mongodb://127.0.0.1/chat', function(err, baza){
             name = data.name;
 
         if(!pattern.test(name)){
-          console.log(users.indexOf(name));
+          //console.log(users.indexOf(name));
           if(users.indexOf(socket.username) || users.indexOf(socket.username) == 0){
             users[users.indexOf(socket.username)] = name;
             socket.username = name;
@@ -176,7 +178,6 @@ mongo.connect('mongodb://127.0.0.1/chat', function(err, baza){
            ]
       };
 
-      console.log(query);
       col.find(query).limit(100).sort({_id: 1}).toArray(function(err, res){
         if(err) throw err;
         socket.emit('output', res);
@@ -205,5 +206,5 @@ mongo.connect('mongodb://127.0.0.1/chat', function(err, baza){
     });
 
   });
-  
+
 });

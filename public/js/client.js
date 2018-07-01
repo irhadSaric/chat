@@ -31,13 +31,8 @@
 
   if(socket !== undefined){
     socket.emit('grupna');
-    socket.username = chatName.value;
+    socket.username = chatName.textContent;
     socket.emit('sendUserName', {name: socket.username});
-
-    chatName.addEventListener('focusout', function(){
-      var self = this;
-      socket.emit('sendUserName', {name: self.value});
-    });
 
     socket.on('onlineUsers', function(data){
       while (users.firstChild) {
